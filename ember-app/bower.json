@@ -1,0 +1,6 @@
+{
+  "name": "ember-app",
+  "dependencies": {
+    "pace": "^1.0.2"
+  }
+}

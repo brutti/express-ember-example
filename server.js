@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 
 // bodyParser Middleware to allow different encoding request
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json()); // to support JSON-encoded bodies
+app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // to support JSON-encoded bodies
 
 var router = express.Router();
 app.use('/', router);
@@ -23,6 +23,7 @@ require('./app/routes')(router); // configure our routes
 
 // startup our app at http://localhost:3000
 app.listen(port);
+console.debug('.:: Server started ::.');
 
 // expose app
 exports = module.exports = app;
